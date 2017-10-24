@@ -48,6 +48,7 @@ Partial Class welcome
         '
         Me.dgvQuestions.AllowUserToAddRows = False
         Me.dgvQuestions.AllowUserToDeleteRows = False
+        Me.dgvQuestions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvQuestions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvQuestions.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvQuestions.Location = New System.Drawing.Point(0, 24)
