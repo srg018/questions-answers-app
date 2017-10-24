@@ -22,27 +22,27 @@ Partial Class welcome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.welcomeMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.LoadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvQuestions = New System.Windows.Forms.DataGridView()
-        Me.MenuStrip1.SuspendLayout()
+        Me.welcomeMenuStrip.SuspendLayout()
         CType(Me.dgvQuestions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'welcomeMenuStrip
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1014, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.welcomeMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem})
+        Me.welcomeMenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.welcomeMenuStrip.Name = "welcomeMenuStrip"
+        Me.welcomeMenuStrip.Size = New System.Drawing.Size(1014, 24)
+        Me.welcomeMenuStrip.TabIndex = 0
+        Me.welcomeMenuStrip.Text = "MenuStrip1"
         '
         'LoadToolStripMenuItem
         '
         Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
-        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
-        Me.LoadToolStripMenuItem.Text = "Load"
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(140, 20)
+        Me.LoadToolStripMenuItem.Text = "Load Recent Questions"
         '
         'dgvQuestions
         '
@@ -63,19 +63,19 @@ Partial Class welcome
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1014, 610)
         Me.Controls.Add(Me.dgvQuestions)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Controls.Add(Me.welcomeMenuStrip)
+        Me.MainMenuStrip = Me.welcomeMenuStrip
         Me.Name = "welcome"
         Me.Text = "Welcome"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.welcomeMenuStrip.ResumeLayout(False)
+        Me.welcomeMenuStrip.PerformLayout()
         CType(Me.dgvQuestions, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents welcomeMenuStrip As MenuStrip
     Friend WithEvents LoadToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents dgvQuestions As DataGridView
 End Class
