@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class welcome
-    Private Sub LoadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem.Click
+    Protected Sub LoadQuestions()
         Dim sqlcon As New SqlConnection With {.ConnectionString = "Server=essql1.walton.uark.edu;Database=isys4283-2017fa;Trusted_Connection=yes;"}
         Dim sqlcmd As SqlCommand
         Dim sqlda As SqlDataAdapter
@@ -28,5 +28,12 @@ Public Class welcome
                 sqlcon.Close()
             End If
         End Try
+    End Sub
+    Private Sub LoadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem.Click
+        LoadQuestions()
+    End Sub
+
+    Private Sub welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadQuestions()
     End Sub
 End Class
