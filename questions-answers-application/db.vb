@@ -1,9 +1,12 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class db
+    ' login to database server
     Protected connection As New SqlConnection With {.ConnectionString = "Server=essql1.walton.uark.edu;Database=isys4283-2017fa;Trusted_Connection=yes;"}
+    ' prepare a query
     Protected command As New SqlCommand With {.Connection = connection}
 
+    ' set and get sql command
     Public Property sql() As String
         Get
             Return command.CommandText
@@ -14,7 +17,7 @@ Public Class db
         End Set
     End Property
 
-    'ability to set give sql command
+    ' populate a data grid view
     Public Sub fill(ByRef dgv As DataGridView)
         Dim adapter As SqlDataAdapter
         Dim dataset As DataSet
