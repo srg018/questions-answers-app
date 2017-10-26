@@ -1,39 +1,39 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class db
-    Protected sqlcon As New SqlConnection With {.ConnectionString = "Server=essql1.walton.uark.edu;Database=isys4283-2017fa;Trusted_Connection=yes;"}
-    Protected sqlcmd As New SqlCommand With {.Connection = sqlcon}
+    Protected connection As New SqlConnection With {.ConnectionString = "Server=essql1.walton.uark.edu;Database=isys4283-2017fa;Trusted_Connection=yes;"}
+    Protected command As New SqlCommand With {.Connection = connection}
 
     Public Property sql() As String
         Get
-            Return sqlcmd.CommandText
+            Return command.CommandText
         End Get
 
         Set(value As String)
-            sqlcmd.CommandText = value
+            command.CommandText = value
         End Set
     End Property
 
     'ability to set give sql command
     Public Sub fill(ByRef dgv As DataGridView)
-        Dim sqlda As SqlDataAdapter
-        Dim sqldataset As DataSet
+        Dim adapter As SqlDataAdapter
+        Dim dataset As DataSet
 
         Try
-            sqlcon.Open()
-            sqlda = New SqlDataAdapter(sqlcmd)
-            sqldataset = New DataSet
-            sqlda.Fill(sqldataset)
-            If sqldataset.Tables.Count > 0 Then
+            connection.Open()
+            adapter = New SqlDataAdapter(command)
+            dataset = New DataSet
+            adapter.Fill(dataset)
+            If dataset.Tables.Count > 0 Then
                 dgv.Refresh()
-                dgv.DataSource = sqldataset.Tables(0)
+                dgv.DataSource = dataset.Tables(0)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
             Throw ex
         Finally
-            If sqlcon.State = ConnectionState.Open Then
-                sqlcon.Close()
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
             End If
         End Try
     End Sub
