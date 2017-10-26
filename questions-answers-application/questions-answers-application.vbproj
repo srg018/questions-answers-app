@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateQuestion.Designer.vb">
+      <DependentUpon>CreateQuestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateQuestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="db.vb" />
     <Compile Include="welcome.vb">
       <SubType>Form</SubType>
@@ -97,6 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CreateQuestion.resx">
+      <DependentUpon>CreateQuestion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
