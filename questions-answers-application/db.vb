@@ -4,9 +4,6 @@ Public Class db
     Dim sqlcon As New SqlConnection With {.ConnectionString = "Server=essql1.walton.uark.edu;Database=isys4283-2017fa;Trusted_Connection=yes;"}
     Dim sqlcmd As New SqlCommand With {.Connection = sqlcon}
 
-    'Fuction returns value, asks for something
-    'sub routine is just process
-
     Public Property sql() As String
         Get
             Return sqlcmd.CommandText
@@ -16,10 +13,9 @@ Public Class db
             sqlcmd.CommandText = value
         End Set
     End Property
+
     'ability to set give sql command
     Public Sub fill(ByRef dgv As DataGridView)
-
-
         Dim sqlda As SqlDataAdapter
         Dim sqldataset As DataSet
 
