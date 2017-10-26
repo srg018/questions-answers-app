@@ -1,8 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class db
-    Dim sqlcon As New SqlConnection With {.ConnectionString = "Server=essql1.walton.uark.edu;Database=isys4283-2017fa;Trusted_Connection=yes;"}
-    Dim sqlcmd As New SqlCommand With {.Connection = sqlcon}
+    Protected sqlcon As New SqlConnection With {.ConnectionString = "Server=essql1.walton.uark.edu;Database=isys4283-2017fa;Trusted_Connection=yes;"}
+    Protected sqlcmd As New SqlCommand With {.Connection = sqlcon}
 
     Public Property sql() As String
         Get
