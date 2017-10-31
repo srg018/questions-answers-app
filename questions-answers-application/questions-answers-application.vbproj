@@ -79,6 +79,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="db.vb" />
+    <Compile Include="UpdateQuestion.Designer.vb">
+      <DependentUpon>UpdateQuestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateQuestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="welcome.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateQuestion.resx">
+      <DependentUpon>UpdateQuestion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="welcome.resx">
       <DependentUpon>welcome.vb</DependentUpon>
