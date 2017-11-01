@@ -3,7 +3,6 @@ Public Class welcome
     Protected db As New db
     Protected Sub LoadQuestions()
         db.sql = "SELECT * FROM questions ORDER BY created_at DESC;"
-
         db.fill(dgvQuestions)
     End Sub
     Private Sub LoadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem.Click
@@ -31,6 +30,5 @@ Public Class welcome
 
     Public Function getQuestionValue(ByVal column As String)
         Return dgvQuestions.Item(column, dgvQuestions.CurrentRow.Index).Value
-
     End Function
 End Class

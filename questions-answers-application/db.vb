@@ -45,6 +45,7 @@ Public Class db
             End If
         End Try
     End Sub
+
     ' execute a DML statement
     Public Sub execute()
         Try
@@ -60,4 +61,3 @@ Public Class db
         End Try
     End Sub
 End Class
-
