@@ -72,7 +72,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateQuestion.Designer.vb">
+      <DependentUpon>CreateQuestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateQuestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="db.vb" />
+    <Compile Include="UpdateQuestion.Designer.vb">
+      <DependentUpon>UpdateQuestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateQuestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="welcome.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +109,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CreateQuestion.resx">
+      <DependentUpon>CreateQuestion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateQuestion.resx">
+      <DependentUpon>UpdateQuestion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="welcome.resx">
       <DependentUpon>welcome.vb</DependentUpon>
