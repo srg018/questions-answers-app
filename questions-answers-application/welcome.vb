@@ -42,4 +42,20 @@ Public Class welcome
             LoadQuestions()
         End If
     End Sub
+
+    Private Sub DeleteQuestionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteQuestionToolStripMenuItem.Click
+        Dim confirmed As Integer = MessageBox.Show("Are you sure you want to delete this?", "Delete", MessageBoxButtons.YesNoCancel)
+
+        If confirmed = DialogResult.Yes Then
+            db.sql = "DELETE FROM questions WHERE id = @question_id"
+            db.bind("@question_id", getQuestionId())
+            db.execute()
+            LoadQuestions()
+        End If
+    End Sub
+    Private Sub ShowAnswersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowAnswersToolStripMenuItem.Click
+        Dim answersForm As New AnswersForm(getQuestionId())
+        answersForm.ShowDialog()
+    End Sub
+
 End Class
