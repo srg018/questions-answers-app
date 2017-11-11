@@ -11,10 +11,10 @@
         id = id
 
 
-        tbUpdateAnswer.Text = AnswersForm.getAnswerValue("answer").ToString()
+        tbUpdateAnswer.Text = welcome.getAnswerValue("answer").ToString()
     End Sub
     Private Sub btnUpdateAnswer_Click(sender As Object, e As EventArgs) Handles btnUpdateAnswer.Click
-        db.sql = "UPDATE answers SET answer = @answer WHERE id = @id"
+        db.sql = "UPDATE answerSET answer = @answer WHERE id = @id"
         db.bind("@id", id)
         db.bind("@answer", tbUpdateAnswer.Text)
         db.execute()

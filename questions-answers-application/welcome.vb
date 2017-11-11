@@ -31,14 +31,13 @@ Public Class welcome
     Public Function getQuestionValue(ByVal column As String)
         Return dgvQuestions.Item(column, dgvQuestions.CurrentRow.Index).Value
     End Function
-
+    
     Public Function getId() As Integer
         Return getAnswerValue("id")
     End Function
 
     Public Function getAnswerValue(ByRef column As String)
         Return dgvAnswers.Item(column, dgvAnswers.CurrentRow.Index).Value
-        db.bind(dgvAnswers, AnswersForm.ActiveForm)
     End Function
 
     Private Sub DeleteQuestionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteQuestionToolStripMenuItem.Click
