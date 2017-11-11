@@ -7,4 +7,5 @@
         db.execute()
         Me.Dispose()
     End Sub
+
 End Class

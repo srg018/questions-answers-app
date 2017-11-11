@@ -32,16 +32,14 @@ Public Class welcome
         Return dgvQuestions.Item(column, dgvQuestions.CurrentRow.Index).Value
     End Function
 
-    Private Sub ReadQuestionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReadQuestionToolStripMenuItem.Click
-        Dim confirmed As Integer = MessageBox.Show("Are you sure you want to delete this?", "Delete", MessageBoxButtons.YesNoCancel)
+    Public Function getId() As Integer
+        Return getAnswerValue("id")
+    End Function
 
-        If confirmed = DialogResult.Yes Then
-            db.sql = "Delete From questions where id = @question_id"
-            db.bind("@question_id", getQuestionId())
-            db.execute()
-            LoadQuestions()
-        End If
-    End Sub
+    Public Function getAnswerValue(ByRef column As String)
+        Return dgvAnswers.Item(column, dgvAnswers.CurrentRow.Index).Value
+        db.bind(dgvAnswers, AnswersForm.ActiveForm)
+    End Function
 
     Private Sub DeleteQuestionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteQuestionToolStripMenuItem.Click
         Dim confirmed As Integer = MessageBox.Show("Are you sure you want to delete this?", "Delete", MessageBoxButtons.YesNoCancel)
@@ -56,6 +54,16 @@ Public Class welcome
     Private Sub ShowAnswersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowAnswersToolStripMenuItem.Click
         Dim answersForm As New AnswersForm(getQuestionId())
         answersForm.ShowDialog()
+    End Sub
+
+    Private Sub CreateAnswerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CreateAnswerToolStripMenuItem.Click
+        CreateAnswer.ShowDialog()
+        LoadAnswers()
+    End Sub
+
+    Protected Sub LoadAnswers()
+        db.sql = "SELECT * FROM answers ORDER BY created_at DESC;"
+        db.fill(dgvQuestions)
     End Sub
 
 End Class
